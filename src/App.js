@@ -1,23 +1,99 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from "react";
+import "./App.css";
+import Message from "./Component/Message";
 
 function App() {
+  const [start, setStart] = useState(false);
+  const [showLetter, setShowLetter] = useState(false);
+
+  const messages = [
+    "Hey Beautiful ❤️",
+    "Today is a very special day...",
+    "Because someone amazing was born 🎉",
+    "You make the world more beautiful 😊",
+    "You bring happiness everywhere 💖",
+    "Keep smiling always 😍",
+    "Since the day you come in my life i get a new purpose of life",
+    "You are the one of the best thing i got from my college city other than my education",
+    "I promissed i will never hurt you",
+    "I will make you my queen",
+    "Always keeps you inside my heart",
+    "You just give me your hand on my hand and i will never leave your hand till my last breath",
+    "You are the best",
+    "May Allah give you everything you deserve",
+    "Happy Birthday 🎂🎈"
+  ];
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
+    <div className="container">
+
+      {/* 🌌 Stars */}
+      <div className="stars"></div>
+
+      {/* ❤️ Hearts */}
+      <div className="hearts">
+        {[...Array(25)].map((_, i) => (
+          <span key={i}></span>
+        ))}
+      </div>
+
+      {/* 🎵 Music */}
+      {start && (
+        <audio autoPlay loop>
+          <source src="/music.mp3" type="audio/mp3" />
+        </audio>
+      )}
+
+      {/* 💌 Love Letter */}
+      {showLetter && (
+        <div className="letter-overlay">
+          <div className="letter">
+            <h2>💌 A Special Message</h2>
+            <p>
+              On this beautiful day, I just want to say... <br />
+              You are truly amazing, kind, and full of light 💖 <br />
+              May your smile never fade 😊 <br />
+              And may happiness always find you 🌸
+            </p>
+
+            <button
+              className="open-btn"
+              onClick={() => {
+                setShowLetter(false);
+                setStart(true);
+              }}
+            >
+              Open Surprise 💖
+            </button>
+          </div>
+        </div>
+      )}
+
+      {/* 🎁 Button / Messages */}
+      {!start && !showLetter ? (
+        <button
+          className="start-btn"
+          onClick={(e) => {
+            // 🎁 Ripple Effect
+            const circle = document.createElement("span");
+            circle.classList.add("ripple");
+
+            const rect = e.target.getBoundingClientRect();
+            circle.style.left = e.clientX - rect.left + "px";
+            circle.style.top = e.clientY - rect.top + "px";
+
+            e.target.appendChild(circle);
+            setTimeout(() => circle.remove(), 600);
+
+            setShowLetter(true);
+          }}
         >
-          Learn React
-        </a>
-      </header>
+          Click for Surprise 🎁
+        </button>
+      ) : start ? (
+        <Message messages={messages} />
+      ) : null}
+
     </div>
   );
 }

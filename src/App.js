@@ -13,7 +13,7 @@ function App() {
     "You make the world more beautiful 😊",
     "You bring happiness everywhere 💖",
     "Keep smiling always 😍",
-    "Since the day you come in my life i get a new purpose of life",
+    "Since the day you come in my life, i get a new purpose of my life",
     "You are the one of the best thing i got from my college city other than my education",
     "I promissed i will never hurt you",
     "I will make you my queen",

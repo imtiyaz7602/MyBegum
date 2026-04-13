@@ -144,7 +144,8 @@ body {
 
 /* 📸 Image */
 .photo {
-  width: 80%;
+  height: 55%;
+  width: 110%;
   max-width: 220px;
   margin-top: 20px;
   border-radius: 20px;

@@ -279,6 +279,9 @@ body {
   color: #ff4e50;
   animation: pulse 1.5s infinite;
 }
+.fade-image {
+  animation: fadeImage 1.5s ease-in-out;
+}
 
 /* 💖 Sub Text */
 .love-sub {

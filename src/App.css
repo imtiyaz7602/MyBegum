@@ -143,20 +143,16 @@ body {
 }
 
 /* 📸 Image */
-/* 📸 Romantic Image */
-..photo {
+.photo {
   width: 80%;
   max-width: 220px;
   margin-top: 20px;
   border-radius: 20px;
+  border: 3px solid #ff4e50;
 
-  /* 💖 Romantic glow */
   box-shadow: 
     0 0 15px rgba(255, 78, 80, 0.6),
     0 0 30px rgba(255, 106, 106, 0.4);
-
-  /* 🌈 Simple border */
-  border: 3px solid #ff4e50;
 
   animation: fadeIn 2s ease-in-out, glowBorder 3s infinite alternate;
 }
@@ -166,6 +162,23 @@ body {
   0% { box-shadow: 0 0 15px rgba(255, 78, 80, 0.6); }
   100% { box-shadow: 0 0 30px rgba(255, 106, 106, 0.9); }
 }
+
+/* 🎞️ Image transition */
+.fade-image {
+  animation: fadeImage 1.5s ease-in-out;
+}
+
+@keyframes fadeImage {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
 /* 💖 Name */
 .name {
   font-size: 3rem;
@@ -185,8 +198,6 @@ body {
 }
 
 /* 🎂 Cake */
-
-/* 🎂 Cake Container */
 .cake-container {
   margin-top: 10px;
   position: relative;
@@ -196,13 +207,11 @@ body {
   animation: bounce 1.5s infinite;
 }
 
-/* 🎂 Cake */
 .cake {
   position: relative;
   z-index: 2;
 }
 
-/* 🔪 Knife */
 .knife {
   position: absolute;
   top: -40px;
@@ -212,7 +221,6 @@ body {
   animation: cutKnife 0.8s ease forwards;
 }
 
-/* 🔪 Knife animation */
 @keyframes cutKnife {
   0% {
     transform: translate(-50%, -50px) rotate(0deg);
@@ -241,7 +249,6 @@ body {
   animation: burstAnim 0.8s ease-out;
 }
 
-/* 🎉 Burst animation */
 @keyframes burstAnim {
   0% {
     transform: translate(-50%, -50%) scale(0.2);
@@ -253,19 +260,20 @@ body {
   }
 }
 
-/* .cut-text {
+/* 🎂 Text */
+.cut-text {
   color: white;
   font-size: 1rem;
   margin-top: 10px;
 }
 
-/* 🎂 Animation */
+/* 🎂 Bounce */
 @keyframes bounce {
   0%, 100% { transform: translateY(0); }
   50% { transform: translateY(-20px); }
-} */
+}
 
-/* 💌 Final Love Screen */
+/* 💌 Final Screen */
 .love-screen {
   display: flex;
   flex-direction: column;
@@ -273,24 +281,18 @@ body {
   animation: fadeIn 2s ease-in-out;
 }
 
-/* ❤️ Big Text */
 .love-text {
   font-size: 3rem;
   color: #ff4e50;
   animation: pulse 1.5s infinite;
 }
-.fade-image {
-  animation: fadeImage 1.5s ease-in-out;
-}
 
-/* 💖 Sub Text */
 .love-sub {
   color: white;
   margin-top: 10px;
   font-size: 1.2rem;
 }
 
-/* ❤️ Pulse Animation */
 @keyframes pulse {
   0% { transform: scale(1); }
   50% { transform: scale(1.2); }

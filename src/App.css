@@ -144,21 +144,19 @@ body {
 
 /* 📸 Image */
 /* 📸 Romantic Image */
-.photo {
+..photo {
   width: 80%;
   max-width: 220px;
   margin-top: 20px;
-
-  /* ❤️ Heart shape */
-  clip-path: path("M 110 200 C 110 200, 20 140, 20 80 A 50 50 0 0 1 110 80 A 50 50 0 0 1 200 80 C 200 140, 110 200, 110 200");
-
-  /* 🌈 Gradient border */
-  padding: 5px;
-  background: linear-gradient(45deg, #ff4e50, #ff6a6a, #ff9a9e);
   border-radius: 20px;
 
-  /* 💖 Glow */
-  box-shadow: 0 0 20px rgba(255, 78, 80, 0.7);
+  /* 💖 Romantic glow */
+  box-shadow: 
+    0 0 15px rgba(255, 78, 80, 0.6),
+    0 0 30px rgba(255, 106, 106, 0.4);
+
+  /* 🌈 Simple border */
+  border: 3px solid #ff4e50;
 
   animation: fadeIn 2s ease-in-out, glowBorder 3s infinite alternate;
 }
@@ -168,23 +166,6 @@ body {
   0% { box-shadow: 0 0 15px rgba(255, 78, 80, 0.6); }
   100% { box-shadow: 0 0 30px rgba(255, 106, 106, 0.9); }
 }
-
-/* 🎞️ Smooth image transition */
-.fade-image {
-  animation: fadeImage 1.5s ease-in-out;
-}
-
-@keyframes fadeImage {
-  from {
-    opacity: 0;
-    transform: scale(0.9);
-  }
-  to {
-    opacity: 1;
-    transform: scale(1);
-  }
-}
-
 /* 💖 Name */
 .name {
   font-size: 3rem;

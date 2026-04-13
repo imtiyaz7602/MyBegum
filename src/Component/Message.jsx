@@ -6,18 +6,22 @@ const Message = ({ messages }) => {
   const [text, setText] = useState("");
   const [cut, setCut] = useState(false);
   const [showLove, setShowLove] = useState(false);
-const [burst, setBurst] = useState(false);
+  const [burst, setBurst] = useState(false);
 
   const images = ["/img1.jpg", "/img2.jpg", "/img3.png"];
 
-  // ✨ Typewriter
+  // ✨ Typewriter Effect
   useEffect(() => {
     let i = 0;
     setText("");
 
+    // ✅ FIXED: speed defined correctly
+    const speed = index === messages.length - 1 ? 80 : 50;
+
     const typing = setInterval(() => {
       setText(messages[index].slice(0, i));
       i++;
+
       if (i > messages[index].length) {
         clearInterval(typing);
 
@@ -29,7 +33,7 @@ const [burst, setBurst] = useState(false);
           }
         }, 1500);
       }
-    }, 50);
+    }, speed);
 
     return () => clearInterval(typing);
   }, [index, messages]);
@@ -56,33 +60,32 @@ const [burst, setBurst] = useState(false);
         />
       )}
 
-  
+      {/* 🎂 Cake Section */}
+      {index === messages.length - 1 && !showLove && (
+        <div
+          className="cake-container"
+          onClick={() => {
+            setCut(true);
+            setBurst(true);
+            setTimeout(() => setBurst(false), 800);
+          }}
+        >
+          {/* 🎂 Cake / 🍰 */}
+          <div className="cake">
+            {cut ? "🍰" : "🎂"}
+          </div>
 
-{index === messages.length - 1 && !showLove && (
-  <div
-    className="cake-container"
-    onClick={() => {
-      setCut(true);
-      setBurst(true);
-      setTimeout(() => setBurst(false), 800);
-    }}
-  >
-    {/* 🎂 Cake or 🍰 after cut */}
-    <div className="cake">
-      {cut ? "🍰" : "🎂"}
-    </div>
+          {/* 🔪 Knife */}
+          {!cut && <div className="knife">🔪</div>}
 
-    {/* 🔪 Knife animation */}
-    {!cut && <div className="knife">🔪</div>}
+          <p className="cut-text">
+            {cut ? "Cake Cut! 🎉" : "Click to cut the cake 💖"}
+          </p>
 
-    <p className="cut-text">
-      {cut ? "Cake Cut! 🎉" : "Click to cut the cake 💖"}
-    </p>
-
-    {/* 🎉 Burst Effect */}
-    {burst && <div className="burst"></div>}
-  </div>
-)}
+          {/* 🎉 Burst */}
+          {burst && <div className="burst"></div>}
+        </div>
+      )}
 
       {/* 💌 Final Screen */}
       {showLove && (

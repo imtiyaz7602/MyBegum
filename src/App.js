@@ -6,23 +6,38 @@ function App() {
   const [start, setStart] = useState(false);
   const [showLetter, setShowLetter] = useState(false);
 
+  // const messages = [
+  //   "Hey Beautiful ❤️",
+  //   "Today is a very special day...",
+  //   "Because someone amazing was born 🎉",
+  //   "You make the world more beautiful 😊",
+  //   "You bring happiness everywhere 💖",
+  //   "Keep smiling always 😍",
+  //   "Since the day you come in my life, i get a new purpose of my life",
+  //   "You are the one of the best thing i got from my college city other than my education",
+  //   "I promissed i will never hurt you",
+  //   "I will make you my queen",
+  //   "Always keeps you inside my heart",
+  //   "You just give me your hand on my hand and i will never leave your hand till my last breath",
+  //   "You are the best",
+  //   "May Allah give you everything you deserve",
+  //   "Happy Birthday 🎂🎈"
+  // ];
   const messages = [
-    "Hey Beautiful ❤️",
-    "Today is a very special day...",
-    "Because someone amazing was born 🎉",
-    "You make the world more beautiful 😊",
-    "You bring happiness everywhere 💖",
-    "Keep smiling always 😍",
-    "Since the day you come in my life, i get a new purpose of my life",
-    "You are the one of the best thing i got from my college city other than my education",
-    "I promissed i will never hurt you",
-    "I will make you my queen",
-    "Always keeps you inside my heart",
-    "You just give me your hand on my hand and i will never leave your hand till my last breath",
-    "You are the best",
-    "May Allah give you everything you deserve",
-    "Happy Birthday 🎂🎈"
-  ];
+  "Hey Bestie ❤️",
+  "Today is a very special day...",
+  "Because someone truly amazing was born 🎉",
+  "You make the world brighter just by being in it 😊",
+  "You spread happiness everywhere you go 💖",
+  "Keep smiling always 😍",
+  "Since the day you came into my life, everything feels a little better",
+  "I’m really grateful to have you",
+  "I promise I’ll always be there for you 🤝",
+  "No matter what happens, I’ll never leave your side",
+  "You are truly special 💫",
+  "May Allah bless you with everything you deserve 🤲",
+  "Happy Birthday 🎂🎈"
+];
 
   return (
     <div className="container">

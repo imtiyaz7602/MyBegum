@@ -8,7 +8,7 @@ const Message = ({ messages }) => {
   const [showLove, setShowLove] = useState(false);
   const [burst, setBurst] = useState(false);
 
-  const images = ["/img1.jpg", "/img2.jpg", "/img3.png"];
+  const images = ["/img1.png", "/img2.png", "/img3.jpg", '/img4.jpg',"/img5.jpg"];
 
   // ✨ Typewriter Effect
   useEffect(() => {
@@ -45,7 +45,7 @@ const Message = ({ messages }) => {
       {index === messages.length - 1 && <Confetti />}
 
       {/* 💖 Name */}
-      <h2 className="name">✨ Ayesha my Lady ✨</h2>
+      <h2 className="name">✨ Dressa My Besti ✨</h2>
 
       {/* 💬 Message */}
       {!showLove && <h1 className="typing">{text}</h1>}
@@ -90,9 +90,9 @@ const Message = ({ messages }) => {
       {/* 💌 Final Screen */}
       {showLove && (
         <div className="love-screen">
-          <h1 className="love-text">I Love You my jaan ❤️</h1>
+          <h1 className="love-text">I Love You my Sweetherat ❤️</h1>
           <p className="love-sub">
-            Once again... Happy Birthday My Begum miss Ayesha 🎂💖
+            Once again... Happy Birthday My Besti Dressa 🎂💖
           </p>
         </div>
       )}
